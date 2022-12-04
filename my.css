@@ -1,0 +1,11 @@
+.RCP {
+border-radius: 10px;
+height: auto;
+width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .RPPic {
+      flex-direction: column;
+    }
+  }

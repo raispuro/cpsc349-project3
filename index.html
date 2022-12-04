@@ -1,0 +1,325 @@
+<!doctype html>
+  <html lang="en">
+
+
+<!-- ============================== head and Title============================-->
+
+
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rock Paper Scissor</title>
+
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="stylesheet" type="text/css" href="/my.css">
+ 
+</head>
+
+
+<!--=======================================body===============================================-->
+<body class="flex flex-col bg-gray-700 text-fuchsia-50">
+   
+
+<!--===========================header====================================================-->
+<header>
+   <!--beginning of nav bar-->
+   <nav class="sticky flex p-2 top-0 bg-gradient-to-r from-[#614385] to-[#516395]">
+    <div class="flex items-center p-2 gap-2">
+      <img src="../PinClipart.com_rock-paper-scissors-clip_3293970.png" width="45">
+      <div class="font-bold text-2xl">
+        <span class="text-stone-500">Rock</span><span class="text-neutral-200">Paper</span><span class="text-lime-500">Scissors</span>
+      </div>
+    </div>
+    <!--=======================================container holding clickable events on right======================================================== -->
+    <div class="flex-1 flex items-center justify-end">
+      <div onclick="toggleSlideover()" class="relative flex h-full item-center p-4 cursor-pointer font-bold text-[#70A9A1] hover:bg-[#8889A2] border-[#D2D2CA] rounded">How To Play</div>
+      <div onclick="toggleSlideoverR()" class="relative flex h-full item-center p-4 cursor-pointer font-bold text-[#70A9A1] hover:bg-[#8889A2] border-[#D2D2CA] rounded">About Us</div>  
+      <!--======================================= end of container holding clickable events on right======================================================== -->
+    </div>
+  </nav>
+  <!--end of beginning of nav bar-->
+
+ 
+
+
+  <h1 id="aboutPage1" class="hidden container mx-auto text-white text-xl text-center bg-indigo-500 shadow-lg 
+            shadow-indigo-500 p-3 rounded-md m-4 text-3xl">About Us</h1>
+  
+
+  <div class="flex space-x-2 justify-center p-6">
+
+
+      <button id="hideButton" class="button3 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs 
+                     leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg 
+                     focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 
+                     active:shadow-lg transition duration-150 ease-in-out">GAME</button>
+
+      <button id="resetButton" type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white 
+                     font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 
+                     hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 
+                     active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">START</button>
+
+
+      <button class="button4 flex inline-block px-6 py-2.5 bg-orange-500 text-white font-medium 
+                    text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg 
+                    focus:bg-orange-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 
+                    active:shadow-lg transition duration-150 ease-in-out">========= Change BG Color ========</button>
+    </div>
+  </div>
+
+</header>
+
+<hr class="border-8 border-gray-900">
+
+<!--=============================================main===================================================-->
+
+<div id="slideover-container" class="fixed inset-0 w-full h-full invisible">
+  <div onclick="toggleSlideover()" id="slideover-bg" class="absolute duration-500 ease-out transition-all w-full h-full bg-gray-900 opacity-0"></div>
+  <div onclick="toggleSlideover()" id="slideover" class="overflow-auto flex flex-col left-0 top-0 fixed duration-1000 ease-out transition-all w-1/2 h-full bg-slate-200 -translate-x-full pb-10">
+    <!--beginning of How to play-->
+    <div Class="mx-auto flex w-100 h-96 bg-indigo-500 shadow-lg shadow-indigo-500 p-3 rounded-md m-7">
+      <img src="./images/RPC.JPG" alt="This picture taken for Wikipedia">
+    </div>
+    <div class="mx-20 item rounded-xl shadow-lg bg-violet-300 text-xl text-black text-center border-double p-5">
+     <em class="font-bold">Rock Paper Scissors</em> is a hand game originating from China, usually 
+     played between two people, in which each player simultaneously forms 
+     one of three shapes with an outstretched hand. These shapes are <em class="font-bold">"Rock" </em>
+     (a closed fist), <em class="font-bold">"Paper"</em> (a flat hand), and 
+     <em class="font-bold">"Scissors"</em> (a fist with the 
+     index finger and middle finger extended, forming a V). "Scissors" is 
+     identical to the two-fingered V sign (also indicating "victory" or "peace") 
+     except that it is pointed horizontally instead of being held upright in the air.</div><br>
+
+  <div class="mx-20 my-12 item rounded-xl shadow-lg bg-violet-400 text-xl text-black text-center p-5">
+     A simultaneous, zero-sum game, it has three possible outcomes: a draw, a win or a loss. 
+     A player who decides to play rock will beat another player who has chosen scissors 
+     ("rock crushes scissors" or "breaks scissors" or sometimes "blunts scissors"[4]), 
+     but will lose to one who has played paper ("paper covers rock"); 
+     a play of paper will lose to a play of scissors ("scissors cuts paper"). 
+     If both players choose the same shape, the game is tied and is usually 
+     immediately replayed to break the tie. The game spread from China while
+     developing different variants in signs over time.</div><br>
+
+   <div class="mx-20 item rounded-xl shadow-lg bg-violet-500 text-xl text-black text-center p-5">
+     The first known mention of the game was in the book Wuzazu[zh] 
+     by the Ming-dynasty writer Xie Zhaozhe. who wrote that the gamediv
+     dated back to the time of the Han dynasty (206 BCE 220 CE).
+     In the book, the game was called shoushiling. Li Rihua's book Note
+     of Liuyanzhai also mentions this game, calling it shoushiling , 
+     huozhitou, or huaquan.</div>
+     <div class="absolute cursor-pointer text-gray-600 top-0 w-8 h-8 flex items-center justify-center right-0 mt-5 mr-5">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </div>
+    <!--end of how to play--> 
+  </div>
+</div>
+<!--end of Leftside slideover container-->
+<!--beginning slideover right-->
+<div id="slideover-containerR" class="w-full h-full fixed inset-0 invisible">
+  <div onclick="toggleSlideoverR()" id="slideover-bgR" class="w-full h-full duration-500 ease-out transition-all inset-0 absolute bg-gray-900 opacity-0"></div>
+  <div onclick="toggleSlideoverR()" id="slideoverR" class="w-1/2 bg-slate-200 h-full absolute right-0 duration-300 ease-out transition-all translate-x-full">
+    <!--about us-->
+    <div class="pl-32 pt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      <div class="box row-start-1 row-end-1 col-start-1 flex flex-col items-center justify-center p-4  transition ease-in-out delay-200 hover:-translate-y-1 hover:scale-110 
+           hover:bg-indigo-400 duration-300 text-white bg-cyan-500/50 shadow-lg shadow-violet-300/50 rounded-lg">
+        <div class="inline-flex shadow-lg border border-slate-500 rounded-full overflow-hidden h-40 w-40">
+          <img src="../mali.jpg"
+             alt=""
+             class="h-full w-full">
+        </div>
+        <h2 class="mt-4 font-bold text-xl">Mohammed Ali</h2>
+        <h6 class="mt-2 text-sm font-medium">Developer</h6>
+        <p class="text-xs text-gray-500 text-center mt-3">
+          -Contributed in designing<br>
+                  &nbsp;&nbsp; layout wireframing<br>
+                -Contributed in coding<br>
+                  &nbsp;&nbsp; HTML/CSS page.<br>
+                -Contributed implementing<br>
+                  &nbsp;&nbsp; the JS CODE<br>
+        </p>
+      </div>
+      <div class="box row-start-2 row-end-2 col-start-2 flex flex-col items-center justify-center p-4  transition ease-in-out delay-200 hover:-translate-y-1 hover:scale-110 
+           hover:bg-indigo-400 duration-300 text-white bg-cyan-500/50 shadow-lg shadow-violet-300/50 rounded-lg">
+        <div class=" object-cover inline-flex shadow-lg border border-slate-500 rounded-full overflow-hidden h-40 w-40">
+          <img src=""
+             alt=""
+             class="h-full w-full">
+        </div>
+        <h2 class="mt-4 font-bold text-xl">Sebastian Bennett</h2>
+        <h6 class="mt-2 text-sm font-medium">Developer</h6>
+        <p class="text-xs text-gray-500 text-center mt-3">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim molestiae nulla.
+        </p>
+      </div>
+      <div class="box row-start-1 row-end-1 col-start-3 col-end-3 flex flex-col items-center justify-center p-4  transition ease-in-out delay-200 hover:-translate-y-1 hover:scale-110 
+           hover:bg-indigo-400 duration-300 text-white bg-cyan-500/50 shadow-lg shadow-violet-300/50 rounded-lg">
+        <div class="inline-flex shadow-lg border border-slate-500 rounded-full overflow-hidden h-40 w-40">
+          <img src=""
+             alt=""
+             class="h-full w-full">
+        </div>
+        <h2 class="mt-4 font-bold text-xl">Ramiro Aispuro</h2>
+        <h6 class="mt-2 text-sm font-medium">Developer</h6>
+        <p class="text-xs text-gray-500 text-center mt-3">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim molestiae nulla.
+        </p>
+      </div>
+    </div>
+    <!-- end of about us-->
+    <!--X logo for slides-->
+      <div class="absolute cursor-pointer text-gray-600 top-0 w-8 h-8 flex items-center justify-center right-0 mt-5 mr-5">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </div>
+      <!--end of X logo for slide-->
+  </div>
+  </div>
+<!--endofslideoverright-->
+<!--===============================================================end of slideover containers==========================================================-->
+<main>
+
+  
+  
+
+
+
+
+<!--==============================================index page======================================================-->
+
+
+
+
+
+
+<!--========================================================game page===============================-->
+<div id="gamePage" class="">
+
+
+  <div id="" class=" display-win-pic flex space-x-2 justify-center p-2 shadow-lg m-2">
+    
+     <label for="name align-center">Enter Your Name: </label>
+
+     <input class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 carret-violet-500 outline-violet-500 name"  type="text"  placeholder="Enter Your Name">
+
+     <input value="Submit"  type="button" class="btn inline-block px-6 py-2.5 bg-violet-500 text-white 
+                                         font-medium text-xs leading-tight uppercase rounded-full shadow-md 
+                                         hover:bg-violet-700 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg 
+                                         focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg 
+                                         transition duration-150 ease-in-out">
+  </div>
+
+
+
+<div class="display-win-pic flex space-x-2 justify-center p-8 shadow-lg ">
+
+         <div id="hidden3" class="hidden inline-block px-6 py-2.5 bg-red-600 text-white font-medium 
+                        text-xs leading-tight uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg 
+                        focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 
+                        active:shadow-lg transition duration-150 ease-in-out p6"><img src="/paper.png"></div>
+
+
+
+        <div id="hidden2" class="hidden text-3xl item w-60 h-52 rounded shadow-lg bg-yellow-100 text-xl text-black text-center">
+                <p class="playername ">Human</p><br>Total Score<br><p class="winMessage2"></p>
+         </div>
+
+        <div class="text-2xl item w-60 h-52 rounded shadow-lg bg-white text-black text-xl text-center">
+               <p class="winMessage1"></p><br>
+               <ul class="winMessage winMessage4">
+                Please Click<br>The START<br>
+               Button<br>To Start<br>The Game
+              </ul>     
+        </div>
+
+        <div id="hidden2" class="hidden ai-score text-3xl item w-60 h-52 rounded shadow-lg bg-yellow-100 
+                                 text-black text-xl text-center">
+             AI<br>Total Score<br><p class="winMessage3"></p>
+        </div>
+
+
+          <div id="hidden3" class="hidden inline-block px-6 py-2.5 bg-red-600 text-white font-medium 
+             text-xs leading-tight uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 
+             focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition 
+             duration-150 ease-in-out p6"><img src="/paper.png"></div>
+</div>
+
+
+
+<div id="hidden2" class="hidden flex space-x-2 justify-center p-8 shadow-lg">
+
+      <button type="button" Class="rock inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs 
+                           leading-tight uppercase rounded shadow-lg hover:bg-blue-700 hover:shadow-lg 
+                           focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 
+                           active:shadow-lg transition duration-150 ease-in-out"><img src="/rock.png"></button>
+
+      <button type="button" Class="paper inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs 
+                            leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 
+                            focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition 
+                            duration-150 ease-in-out"><img src="/paper.png"></button>
+
+      <button type="button"Class="scissor inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs 
+                                   leading-tight uppercase rounded shadow-lg hover:bg-green-600 hover:shadow-lg 
+                                    focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 
+                                   active:shadow-lg transition duration-150 ease-in-out"><img src="/scissor.png"></Button>
+
+</div>
+
+
+
+
+
+</div>
+
+<!--======================================about page===========================================-->
+
+
+<div id="aboutPage">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</main>
+
+
+
+<hr class="border-8 border-gray-900">
+
+
+<!--==============================footer==================================================================-->
+<!--since its one page we do not need this button we can use it to credit the site that I took picture from -->
+<!-- please do make change if you think its needs to be change do not worry about it i have back up. -->
+
+<footer>
+  <nav class="flex space-x-2 justify-center p-6">
+    <div class="">
+        |&nbsp;  
+         <a class="hover:text-blue-300" href="#">HOME</a>  	&nbsp;|	 	&nbsp;
+         <a class="hover:text-blue-300" href="#">About Us</a> 	&nbsp;| 	&nbsp;
+         <a class="hover:text-blue-300" href="">GAME</a>  &nbsp;| 	&nbsp;
+         <button type="button" id="continue">continue</button> &nbsp;|
+    </div>
+ </nav>
+
+</footer>
+
+<script src="./slideover.js"></script>
+ <script type='module' src="/game.js"></script>
+</body>
+
+</html>
